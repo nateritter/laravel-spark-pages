@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirschbaum\LaravelSparkPages;
+namespace NateRitter\LaravelSparkPages;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,8 +25,8 @@ class PagesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Kirschbaum\LaravelSparkPages\PageController');
-        $this->app->make('Kirschbaum\LaravelSparkPages\Page');
+        $this->app->make('NateRitter\LaravelSparkPages\PageController');
+        $this->app->make('NateRitter\LaravelSparkPages\Page');
         $this->registerViewFiles();
     }
 

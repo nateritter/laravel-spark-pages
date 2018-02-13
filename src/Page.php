@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirschbaum\LaravelSparkPages;
+namespace NateRitter\LaravelSparkPages;
 
 use Illuminate\Database\Eloquent\Model;
 
