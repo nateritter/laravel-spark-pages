@@ -1,5 +1,5 @@
 {
-    "name": "kirschbaum/laravel-spark-pages",
+    "name": "nateritter/laravel-spark-pages",
     "description": "Easy CMS-like page creation and editing for Laravel Spark",
     "type": "library",
     "authors": [
@@ -10,6 +10,10 @@
         {
             "name": "Nathan Kirschbaum",
             "email": "nathan.kirschbaum@gmail.com"
+        },
+        {
+            "name": "Nate Ritter",
+            "email": "nate@perfectspace.com"
         }
     ],
     "keywords": ["laravel-spark", "content-management", "pages"],
@@ -17,7 +21,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Kirschbaum\\LaravelSparkPages\\": "src/"
+            "NateRitter\\LaravelSparkPages\\": "src/"
         }
     }
 }
