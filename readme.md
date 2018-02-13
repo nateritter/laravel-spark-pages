@@ -48,19 +48,19 @@ We have purposely chosen not to overcomplicate this add-on. If your product is s
 Add the package to your existing Spark installation:
 
 ```
-composer require kirschbaum/laravel-spark-pages
+composer require nateritter/laravel-spark-pages
 ```
 
 Add the following to the `providers` array in `config/app.php`. This provider must be **registered as the last service provider** on the `providers` array:
 
 ```
-Kirschbaum\LaravelSparkPages\PagesServiceProvider::class
+NateRitter\LaravelSparkPages\PagesServiceProvider::class
 ```
 
 Publish migrations:
 
 ```
-php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='migrations'
+php artisan vendor:publish --provider="NateRitter\LaravelSparkPages\PagesServiceProvider" --tag='migrations'
 ```
 
 Run migrations:
@@ -72,7 +72,7 @@ php artisan migrate
 Publish assets:
 
 ```
-php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='assets'
+php artisan vendor:publish --provider="NateRitter\LaravelSparkPages\PagesServiceProvider" --tag='assets'
 ```
 
 Add the following line to `resources/assets/js/app.js`:
