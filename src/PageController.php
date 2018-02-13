@@ -1,9 +1,9 @@
 <?php
 
-namespace Kirschbaum\LaravelSparkPages;
+namespace NateRitter\LaravelSparkPages;
 
 use App\Http\Controllers\Controller;
-use Kirschbaum\LaravelSparkPages\Page;
+use NateRitter\LaravelSparkPages\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller {
@@ -66,7 +66,7 @@ class PageController extends Controller {
      */
     public function edit($slug)
     {
-        $page = Page::whereSlug($slug)->firstOrFail();
+        $page = Page::whereSlug('/'.$slug)->firstOrFail();
         return view('vendor.laravel-spark-pages.create_edit', compact(['page']));
     }
 
@@ -79,8 +79,9 @@ class PageController extends Controller {
      */
     public function update(Request $request, $slug)
     {
-        $page = Page::whereSlug($slug)->firstOrFail();
+        $page = Page::whereSlug('/'.$slug)->firstOrFail();
         $published = false;
+
         if(null != $request->input('published')){
             $published = true;
         }
@@ -91,7 +92,8 @@ class PageController extends Controller {
             'body'      => $request->input('body'),
             'published' => $published,
         ]);
-        return redirect("{$request->input('slug')}");
+
+        return redirect($request->input('slug'));
     }
 
     /**
@@ -102,7 +104,7 @@ class PageController extends Controller {
      */
     public function destroy($slug)
     {
-        Page::whereSlug($slug)->firstOrFail()->delete();
+        Page::whereSlug('/'.$slug)->firstOrFail()->delete();
     }
 
     private function ensureTheSlugBeginsWithASlash($request)
